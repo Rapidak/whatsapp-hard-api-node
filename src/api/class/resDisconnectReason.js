@@ -28,17 +28,17 @@ const resDisconnectReason = {
 	experimental: 501,
 	unavailableService: 503,
 	restartRequired: 515,
-	serviceQr: 9990,
-	serviceOpen: 9999,
+	serviceQr: 'qrCode',
+	serviceOpen: 'open',
 };
 //
 module.exports = class Disconnect {
 
 	static async lastDisconnect(key, lastDisconnect) {
-		if(lastDisconnect == 9990){
-			var statusCode = lastDisconnect;
-		}else if(lastDisconnect == 9999){
-			var statusCode = lastDisconnect;
+		if(lastDisconnect == 'qrCode'){
+			var statusCode = 'qrCode';
+		}else if(lastDisconnect == 'open'){
+			var statusCode = 'open';
 		}else{
 			var statusCode = lastDisconnect?.error ? lastDisconnect.error?.output?.statusCode : 0;
 		}

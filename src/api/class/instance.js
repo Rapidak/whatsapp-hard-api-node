@@ -628,7 +628,7 @@ class WhatsAppInstance {
 					connection_code: lastDisconnect?.error?.output?.statusCode
 				}, this.key);
 			} else if (connection === 'open') {
-				await Disconnect.lastDisconnect(this.key, 9999);
+				await Disconnect.lastDisconnect(this.key, 'open');
 				this.instance.online = true;
 				await this.SendWebhook('connection', 'connection.update', {
 					connection: connection,
@@ -642,7 +642,7 @@ class WhatsAppInstance {
 				QRCode.toDataURL(qr).then((url) => {
 					this.instance.qr = url;
 				});
-				await Disconnect.lastDisconnect(this.key, 9990);
+				await Disconnect.lastDisconnect(this.key, 'qrCode');
 				await this.SendWebhook('qrCode', 'qrCode.update', {
 					qr: qr,
 				}, this.key);
