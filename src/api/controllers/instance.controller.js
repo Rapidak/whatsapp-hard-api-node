@@ -26,7 +26,7 @@ if (process.env.MAX_INSTANCES) {
   if (maxInstances <= sessionCount) {
     return res.json({
       error: true,
-      message: 'Limite de sessions criadas já foi atingido'
+      message: 'Limit of sessions created has already been reached'
     });
   }
 }
@@ -35,7 +35,7 @@ if (process.env.MAX_INSTANCES) {
     if (valida) {
         return res.json({
             error: true,
-            message: 'Sessão já foi iniciada.'
+            message: 'Session has already started.'
         });
     } else {
         const appUrl = config.appUrl || req.protocol + '://' + req.headers.host;

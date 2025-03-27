@@ -9,14 +9,14 @@ function adminToken(req, res, next) {
     if (!token) {
         return res.status(403).send({
             error: true,
-            message: 'admintoken Nao fornecido via get ',
+            message: 'Admintoken Now For keys Via Gate ',
         })
     }
 
     if (config.adminToken !== token) {
         return res
             .status(403)
-            .send({ error: true, message: 'Token de Admin inválido' })
+            .send({ error: true, message: 'Invalid Admin Token' })
     }
     next()
 }

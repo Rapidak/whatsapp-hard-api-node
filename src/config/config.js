@@ -23,7 +23,7 @@ const REASON_URL = process.env.REASON_URL || false
 
 const INSTANCE_MAX_RETRY_QR = process.env.INSTANCE_MAX_RETRY_QR || 2
 
-const CLIENT_PLATFORM = process.env.CLIENT_PLATFORM || 'Whatsapp MD'
+const CLIENT_PLATFORM = process.env.CLIENT_PLATFORM || 'akautomations'
 const CLIENT_BROWSER = process.env.CLIENT_BROWSER || 'Chrome'
 const CLIENT_VERSION = process.env.CLIENT_VERSION || '4.0.0'
 
@@ -50,6 +50,7 @@ const WEBHOOK_ALLOWED_EVENTS = process.env.WEBHOOK_ALLOWED_EVENTS?.split(',') ||
 const MARK_MESSAGES_READ = !!(
 	process.env.MARK_MESSAGES_READ && process.env.MARK_MESSAGES_READ === 'true'
 )
+
 
 module.exports = {
 	port: PORT,
